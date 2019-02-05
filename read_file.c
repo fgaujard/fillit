@@ -10,36 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include <unistd.h>
-#include <fcntl.h>
+#include "fillit.h"
 
 char	*read_file(int fd)
 {
 	char str[22];
 	char *file;
 
-	if ((!file && (file = (char *)ft_strnew(sizeof(*file))) == NULL))
-		return (0);
+	file = NULL;
 	while (read(fd, str, 21) > 0)
 	{
 		str[21] = '\0';
-		file = ft_strjoin(file, str);
+		file = ft_strappend(file, str);
 	}
 	return (file);
-}
-
-int		main(int ac, char **av)
-{
-	int fd;
-
-	if (ac != 2)
-	{
-		write(2, "error\n", 6);
-		return (0);
-	}
-	fd = open(av[1], O_RDONLY);
-	ft_putstr(read_file(fd));
-	close(fd);
-	return (0);
 }

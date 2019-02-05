@@ -12,9 +12,10 @@
 
 #include "fillit.h"
 
-int		·main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	int fd;
+	char *str;
 
 	if (ac != 2)
 	{
@@ -22,7 +23,9 @@ int		·main(int ac, char **av)
 		return (0);
 	}
 	fd = open(av[1], O_RDONLY);
-	ft_putstr(read_file(fd));
+	str = read_file(fd);
+	ft_putstr(str);
+	free(str);
 	close(fd);
 	return(0);
 }
