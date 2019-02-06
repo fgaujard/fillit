@@ -1,7 +1,0 @@
-ouvrir fichier
-lire fichier
-stocker fichier
-verifier fichier
-definire map
-test de placement des tetris par ordre d'arriver
-
