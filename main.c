@@ -16,6 +16,7 @@ int		main(int ac, char **av)
 {
 	int fd;
 	char *str;
+	char **tetri;
 
 	if (ac != 2)
 	{
@@ -25,7 +26,6 @@ int		main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	str = read_file(fd);
 	ft_putstr(str);
-	free(str);
-	close(fd);
+	tetri = malloc_tetri(str);
 	return(0);
 }

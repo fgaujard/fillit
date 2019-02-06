@@ -19,5 +19,6 @@
 
 char	*read_file(int fd);
 int		main(int ac, char **av);
+char	**malloc_tetri(char *str);
 
 #endif
