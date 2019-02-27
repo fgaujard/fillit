@@ -14,7 +14,6 @@ CC = gcc
 CC_FLAGS = -Wall -Wextra -Werror
 MAKE = make
 NAME = fillit
-LIB =
 SRC = main.c\
 	read_file.c
 OBJ =

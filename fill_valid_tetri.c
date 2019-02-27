@@ -1,7 +1,7 @@
-/* ************************************************************************** */
+/**************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_sample.c                                     :+:      :+:    :+:   */
+/*   fill_valid_tetri.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -25,14 +25,13 @@ static int		count_tetri(char *str)
 	return (size);
 }
 
-static char		**malloc_tetri(char *str, int size)
+static char		**malloc_tetri(int size)
 {
 	char	**tetri;
 	int		i;
 
-	if (!(tetri = (char **)ft_strnew(sizeof(char) * (size + 1))))
+	if (!(tetri = (char **)ft_memalloc(sizeof(char *) * (size + 1))))
 		return (NULL);
-	tetri[size] = 0;
 	i = 0;
 	while (i < size)
 	{
@@ -52,16 +51,14 @@ char	**fill_tetri(char *str)
 	int		k;
 
 	size = count_tetri(str);
-	tetri = malloc_tetri(str, size);
+	tetri = malloc_tetri(size);
 	i = 0;
 	j = 0;
 	k = 0;
 	while ((i < size) && (str[k] != '\0'))
 	{
 		while ((j < 21) && (str[k] != '\0'))
-		{
 			tetri[i][j++] = str[k++];
-		}
 		printf("tetri[%i] =\n%s", i, tetri[i]);
 		i++;
 		j = 0;

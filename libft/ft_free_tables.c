@@ -21,6 +21,7 @@ void	ft_free_tables(char **tab)
 	{
 		free(tab[i]);
 		tab[i] = NULL;
+		i++;
 	}
 	free(tab);
 	tab = NULL;

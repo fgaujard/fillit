@@ -21,5 +21,6 @@
 char	*read_file(int fd);
 int		main(int ac, char **av);
 char	**fill_tetri(char *str);
+int		verif_malloced_tetri(char *tetri);
 
 #endif

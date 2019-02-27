@@ -16,7 +16,8 @@ int		main(int ac, char **av)
 {
 	int		fd;
 	char	*str;
-
+	char	**tetri;
+	
 	if (ac != 2)
 	{
 		write(2, "error\n", 6);
@@ -25,7 +26,9 @@ int		main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	str = read_file(fd);
 	ft_putstr(str);
-	fill_tetri(str);
+	tetri = fill_tetri(str);
+	ft_strdel(&str);
+	ft_free_tables(tetri);
 	close(fd);
 	return(0);
 }

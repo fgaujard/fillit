@@ -20,7 +20,7 @@ void	*ft_memalloc(size_t size)
 	i = 0;
 	if (!(dest = (char *)malloc(sizeof(char) * size)))
 		return (0);
-	while (i <= size)
+	while (i < size)
 		dest[i++] = 0;
 	return ((void *)dest);
 }
