@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 13:37:26 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/02/28 16:51:28 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/02/28 18:41:05 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ static int		count_block(char *tetri)
 	j = 0;
 	while (tetri[i] != '\0')
 	{
-		if ((tetri[i] != '.') || (tetri[i] != '#') || (tetri[i] != '\n'))
-			return (0);
+		if ((tetri[i] != '.') && (tetri[i] != '#') && (tetri[i] != '\n'))
+			return (1);
 		if (tetri[i] == '#')
 			j++;
 	i++;
 	}
-	if (j == 4)
-		return (1);
-	return (0);
+	if (j != 4)
+		return (0);
+	return (1);
 }
 
 static int		verif_forms(char *tetri)
@@ -39,7 +39,7 @@ static int		verif_forms(char *tetri)
 	i = 0;
 	while (tetri[i] != '\0')
 	{
-		while (tetri[i] == '.')
+		while (tetri[i] == '.' || tetri[i] == '\n')
 			i++;
 		if (tetri[i] == '#')
 		{

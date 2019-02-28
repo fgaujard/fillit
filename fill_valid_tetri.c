@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:12:08 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/02/28 16:54:29 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/02/28 18:10:35 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**fill_tetri(char *str)
 		if (verif_malloced_tetri(tetri[i]) != 1)
 			printf("KO\n");
 		else
-			printf("GOOD\n");
+			printf("VALID\n");
 		i++;
 		j = 0;
 	}
