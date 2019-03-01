@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 15:12:08 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/02/28 18:10:35 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/01 14:42:28 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int		count_tetri(char *str)
 	if (len % 21 != 0)
 		return (0);
 	size = len / 21;
-	printf("len : %d\nsize : %d\n", len, size);
+//	printf("len : %d\nsize : %d\n", len, size);
 	return (size);
 }
 
@@ -59,11 +59,11 @@ char	**fill_tetri(char *str)
 	{
 		while ((j < 21) && (str[k] != '\0'))
 			tetri[i][j++] = str[k++];
-		printf("tetri[%i] =\n%s", i, tetri[i]);
-		if (verif_malloced_tetri(tetri[i]) != 1)
+//		printf("tetri[%i] =\n%s", i, tetri[i]);
+		/*if (verif_malloced_tetri(tetri[i]) != 1)
 			printf("KO\n");
 		else
-			printf("VALID\n");
+			printf("VALID\n");*/
 		i++;
 		j = 0;
 	}
