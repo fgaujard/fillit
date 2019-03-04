@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 15:35:43 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/02/28 18:03:19 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/04 16:51:47 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 
 char	*read_file(int fd);
 int		main(int ac, char **av);
-char	**fill_tetri(char *str);
+char	**fill_valid_tetri(char *str, int size);
 int		verif_malloced_tetri(char *tetri);
+int		count_tetri(char *str);
+char	*size_map_min(int size);
 
 #endif

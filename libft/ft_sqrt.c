@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 15:31:50 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/04 16:51:51 by fgaujard         ###   ########.fr       */
+/*   Created: 2019/03/04 16:08:43 by fgaujard          #+#    #+#             */
+/*   Updated: 2019/03/04 16:11:30 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		main(int ac, char **av)
+int		ft_sqrt(int nb)
 {
-	int		fd;
-	char	*str;
-	char	**tetri;
-	int		size;
+	int i;
 
-	if (ac != 2)
-	{
-		write(2, "error\n", 6);
-		return (0);
-	}
-	fd = open(av[1], O_RDONLY);
-	str = read_file(fd);
-	size = count_tetri(str);
-	tetri = fill_valid_tetri(str, size);
-	ft_putstr(size_map_min(size));
-	ft_strdel(&str);
-	ft_free_tables(tetri);
-	close(fd);
+	i = 1;
+	if (nb == 1)
+		return (1);
+	while (i * i < nb)
+		i++;
+	if (i * i == nb)
+		return (i);
 	return (0);
 }

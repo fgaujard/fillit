@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_malloced_tetri.c                             :+:      :+:    :+:   */
+/*   verif.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/27 13:37:26 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/02/28 18:41:05 by fgaujard         ###   ########.fr       */
+/*   Created: 2019/02/28 16:11:36 by fgaujard          #+#    #+#             */
+/*   Updated: 2019/03/04 13:38:25 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int		count_block(char *tetri)
+static int		verif_endline(char *tetri)
+{
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (tetri[4 + (5 * i)] != '\n')
+			return (0);
+		i++;
+	}
+	if (tetri[20] != '\n')
+		return (0);
+	return (1);
+}
+
+static int		verif_tags(char *tetri)
 {
 	int i;
 	int j;
@@ -21,59 +37,26 @@ static int		count_block(char *tetri)
 	j = 0;
 	while (tetri[i] != '\0')
 	{
-		if ((tetri[i] != '.') && (tetri[i] != '#') && (tetri[i] != '\n'))
-			return (1);
-		if (tetri[i] == '#')
-			j++;
-	i++;
-	}
-	if (j != 4)
-		return (0);
-	return (1);
-}
-
-static int		verif_forms(char *tetri)
-{
-	int i;
-
-	i = 0;
-	while (tetri[i] != '\0')
-	{
 		while (tetri[i] == '.' || tetri[i] == '\n')
 			i++;
 		if (tetri[i] == '#')
 		{
-			if (tetri[i + 5] == '#')
-			{
-				if (tetri[i + 4] == '#')
-					if (tetri[i + 3] == '#' || tetri[i + 10] == '#')
-						return (1);
-				if (tetri[i + 10] == '#')
-					if (tetri[i + 9] == '#' || tetri[i + 15] == '#' || tetri[i + 11] == '#')
-						return (1);
-				if (tetri[i + 6] == '#')
-					if (tetri[i + 7] == '#' || tetri[i + 11] == '#')
-						return (1);
-			}
-			if (tetri[i + 1] == '#')
-			{
-				if (tetri[i + 6] == '#')
-					if (tetri[i + 5] == '#' || tetri[i + 11] == '#' || tetri[i + 7] == '#')
-						return (1);
-				if (tetri[i + 2] == '#')
-					if (tetri[i + 7] == '#' || tetri[i + 3] == '#')
-						return (1);
-			}
+			if (tetri[i + 1] == '#' || tetri[i + 5] == '#' || tetri[i - 1] \
+					|| tetri[i - 5] == '#')
+				j++;
+			i++;
 		}
 	}
+	if (j == 4)
+		return (1);
 	return (0);
 }
 
 int				verif_malloced_tetri(char *tetri)
 {
-	if (count_block(tetri) != 1)
+	if (verif_endline(tetri) != 1)
 		return (0);
-	if (verif_forms(tetri) != 1)
+	if (verif_tags(tetri) != 1)
 		return (0);
 	return (1);
 }

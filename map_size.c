@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 15:31:50 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/04 16:51:51 by fgaujard         ###   ########.fr       */
+/*   Created: 2019/03/04 15:40:55 by fgaujard          #+#    #+#             */
+/*   Updated: 2019/03/04 16:58:32 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		main(int ac, char **av)
+char	*size_map_min(int size)
 {
-	int		fd;
-	char	*str;
-	char	**tetri;
-	int		size;
+	int		map_size;
+	char	*map;
+	int		i;
+	int		j;
+	int		k;
 
-	if (ac != 2)
-	{
-		write(2, "error\n", 6);
+	map_size = size * 4;
+	k = ft_sqrt(map_size);
+	map_size = k * (k + 1);
+	if (!(map = (char *)ft_strnew(sizeof(char) * (map_size + 1))))
 		return (0);
+	i = k;
+	j = 0;
+	while (j < map_size)
+	{
+		if (j == i)
+		{
+			map[j++] = '\n';
+			i = i + k;
+		}
+		map[j++] = '.';
 	}
-	fd = open(av[1], O_RDONLY);
-	str = read_file(fd);
-	size = count_tetri(str);
-	tetri = fill_valid_tetri(str, size);
-	ft_putstr(size_map_min(size));
-	ft_strdel(&str);
-	ft_free_tables(tetri);
-	close(fd);
-	return (0);
+	return (map);
 }
