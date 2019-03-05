@@ -6,12 +6,12 @@
 #    By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/04 16:26:20 by fgaujard          #+#    #+#              #
-#    Updated: 2019/03/04 16:49:26 by fgaujard         ###   ########.fr        #
+#    Updated: 2019/03/05 17:49:48 by fgaujard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror -g
 MAKE = make
 NAME = fillit
 SRC = main.c\
@@ -19,7 +19,8 @@ SRC = main.c\
 	count_tetri.c\
 	fill_valid_tetri.c\
 	verif_malloced_tetri.c\
-	map_size.c
+	parse_tetri.c\
+	map.c
 
 OBJ = $(SRC:.c=.o)
 LIB = libft/libft.a

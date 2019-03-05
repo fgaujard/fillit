@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 16:11:36 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/04 13:38:25 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:27:42 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ static int		verif_tags(char *tetri)
 			i++;
 		if (tetri[i] == '#')
 		{
-			if (tetri[i + 1] == '#' || tetri[i + 5] == '#' || tetri[i - 1] \
-					|| tetri[i - 5] == '#')
+			if (tetri[i + 1] == '#' || tetri[i + 5] == '#' \
+				|| tetri[i - 1] == '#' || tetri[i - 5] == '#')
 				j++;
 			i++;
 		}
