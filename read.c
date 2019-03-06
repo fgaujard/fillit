@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 15:44:14 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/06 18:21:51 by fgaujard         ###   ########.fr       */
+/*   Created: 2019/03/06 17:23:28 by fgaujard          #+#    #+#             */
+/*   Updated: 2019/03/06 17:57:23 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-/*static int		verif_size(char *file)
+static int		check_len(int fd)
 {
+	char c;
 	int len;
 
-	len = ft_strlen(file);
-	printf("%i\n", len);
-	return (0);
-}*/
+	len = 0;
+	c = '\0';
+	while (read(fd, &c, 1) > 0)
+		len++;
+	printf("%i", len);
+	if (((len + 1) % 21) != 0)
+		return (0);
+	return (len + 1);
+}
 
 char			*read_file(int fd)
 {
-	char	str[22];
-	char	*file;
-	int		nb_car_read;
+	int len;
+	int i;
+	char c;
+	char *str;
 
-	file = NULL;
-	ft_bzero(str, 22);
-	while ((nb_car_read = read(fd, str, 21)) > 0)
-	{
-		if (nb_car_read < 21)
-		{
-			if (str[19] == '\n' && str[20] != '\n')
-				ft_putstr("ok\n");
-			else
-				ft_putstr("error\n");
-		}
-		file = ft_strappend(file, str);
-	}
-	return (file);
+	len = check_len(fd);
+	if (!(str = (char *)ft_strnew(sizeof(char) * len + 1)))
+		return (0);
+	i = 0;
+	c = '\0';
+	while ((read(fd, &c, 1) > 0) && (i < len))
+		str[i++] = c;
+	str[i] = '\0';
+	printf("%s", str);
+	return (str);
 }

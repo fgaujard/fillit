@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 13:07:19 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/05 17:39:58 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/06 18:05:28 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char			**fill_valid_tetri(char *str, int size)
 	{
 		while ((j < 21) && (str[k] != '\0'))
 			tetri[i][j++] = str[k++];
-//		printf("tetri[%i] =\n%s", i, tetri[i]);
+		printf("tetri[%i] =\n%s\n", i, tetri[i]);
 //		if (verif_malloced_tetri(tetri[i]) != 1)
 //			printf("KO\n");
 //		else

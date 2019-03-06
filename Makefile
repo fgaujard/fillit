@@ -6,7 +6,7 @@
 #    By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/04 16:26:20 by fgaujard          #+#    #+#              #
-#    Updated: 2019/03/05 17:49:48 by fgaujard         ###   ########.fr        #
+#    Updated: 2019/03/06 18:02:43 by fgaujard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = main.c\
 	count_tetri.c\
 	fill_valid_tetri.c\
 	verif_malloced_tetri.c\
-	parse_tetri.c\
+	parse.c\
 	map.c
 
 OBJ = $(SRC:.c=.o)

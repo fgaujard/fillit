@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/04 15:31:50 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/05 16:35:59 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/06 18:06:56 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int ac, char **av)
 	size = count_tetri(str);
 	tetri = fill_valid_tetri(str, size);
 	tetri = parse_tetri(tetri);
-	ft_putstr(map(size));
+	//ft_putstr(map(size));
 	ft_strdel(&str);
 	ft_free_tables(tetri);
 	close(fd);
