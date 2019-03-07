@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 15:41:43 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/06 18:05:55 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:50:52 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ int		count_tetri(char *str)
 			return (0);
 		len++;
 	}
-	if (len % 21 != 0)
+	if (len % 20 != 0)
 		return (0);
-	size = len / 21;
-	printf("len : %d\nsize : %d\n", len, size);
+	size = len / 20;
+	if (size > 26)
+		return (0);
 	return (size);
 }

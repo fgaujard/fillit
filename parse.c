@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/06 11:03:40 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/06 16:29:28 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/07 18:23:39 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,22 +60,27 @@ static	void	extract_tetri(char *tetri, char *parsed)
 {
 	int i;
 	int j;
+	int k;
 
 	i = 0;
 	j = 0;
-	while (tetri[i] != '\0')
+	k = 0;
+	while (tetri[i] != '\0' && k < 4)
 	{
 		if (tetri[i] == '!')
 			i++;
 		if (tetri[i] != '!' && tetri[i] != '\0')
+		{
+			if (tetri[i] == '#')
+				k++;
 			parsed[j++] = tetri[i++];
+		}
 	}
-	j--;
-	parsed[j--] = '\0';
+	if (parsed[j - 1] != '#' && parsed[j - 1] != '.')
+		parsed[--j] = '\0';
 }
 
-
-char	**parse_tetri(char **tetri)
+char			**parse_tetri(char **tetri)
 {
 	int		i;
 	char	*parsed;
@@ -90,8 +95,8 @@ char	**parse_tetri(char **tetri)
 		extract_tetri(tetri[i], parsed);
 		ft_bzero(tetri[i], 21);
 		ft_strcpy(tetri[i], parsed);
-//		printf("%s\n\n", tetri[i]);
 		free(parsed);
+		ft_putstr(tetri[i]);
 		i++;
 	}
 	return (tetri);

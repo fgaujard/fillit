@@ -6,7 +6,7 @@
 #    By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/04 16:26:20 by fgaujard          #+#    #+#              #
-#    Updated: 2019/03/04 16:16:03 by fgaujard         ###   ########.fr        #
+#    Updated: 2019/03/07 15:12:04 by fgaujard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,8 @@ SRC = ft_memset.c\
 	ft_strlowcase.c\
 	ft_swap.c\
 	ft_strappend.c\
-	ft_sqrt.c
+	ft_sqrt.c\
+	ft_idxof.c
 
 OBJ = $(SRC:.c=.o)
 INCLUDES = libft.h

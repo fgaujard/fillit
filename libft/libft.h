@@ -6,7 +6,7 @@
 /*   By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 16:29:46 by fgaujard          #+#    #+#             */
-/*   Updated: 2019/03/04 16:11:54 by fgaujard         ###   ########.fr       */
+/*   Updated: 2019/03/07 15:13:56 by fgaujard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void				ft_swap(int *a, int *b);
 char				*ft_strlowcase(char *str);
 char				*ft_strappend(char *s1, char *s2);
 int					ft_sqrt(int nb);
+int					ft_idxof(const char *s, char c);
 
 #endif

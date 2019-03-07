@@ -6,7 +6,7 @@
 #    By: fgaujard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/04 16:26:20 by fgaujard          #+#    #+#              #
-#    Updated: 2019/03/06 18:02:43 by fgaujard         ###   ########.fr        #
+#    Updated: 2019/03/07 15:19:15 by fgaujard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC = main.c\
 	fill_valid_tetri.c\
 	verif_malloced_tetri.c\
 	parse.c\
-	map.c
+	ft_map.c\
+	ft_solver.c
 
 OBJ = $(SRC:.c=.o)
 LIB = libft/libft.a
