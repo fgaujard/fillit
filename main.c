@@ -43,11 +43,11 @@ int				main(int ac, char **av)
 	str = read_file(fd);
 	if (!str)
 		print_error();
-	printf("%s\n", str);
+//	printf("%s\n", str);
 	size = count_tetri(str);
 	if (size == 0)
 		print_error();
-	printf("%i", size);
+//	printf("%i", size);
 	tetri = fill_valid_tetri(str, size);
 	if (!tetri)
 		print_error();

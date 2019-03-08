@@ -96,7 +96,6 @@ char			**parse_tetri(char **tetri)
 		ft_bzero(tetri[i], 21);
 		ft_strcpy(tetri[i], parsed);
 		free(parsed);
-		ft_putstr(tetri[i]);
 		i++;
 	}
 	return (tetri);

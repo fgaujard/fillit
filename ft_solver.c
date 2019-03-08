@@ -45,12 +45,10 @@ void		ft_fill(char *tetrimino, char *map, int pos, char c)
 {
 	int	i;
 	int	x;
-	int begin;
 	int	map_size;
 
 	i = 0;
 	x = ft_idxof(tetrimino, '\n') - 1;
-	begin = pos;
 	map_size = ft_idxof(map, '\n');
 	while (tetrimino[i] != '\0')
 	{

@@ -30,7 +30,7 @@ $(NAME) : $(OBJ)
 	$(CC) $(CC_FLAGS) -o $(NAME) $(OBJ) libft/libft.a
 
 %.o: %.c lib
-	$(CC) -c $(CC_FLAGS) $(SRC) -I libft/libft.h
+	$(CC) -c $(CC_FLAGS) $(SRC) -I libft
 
 clean : libclean
 	rm -f $(OBJ)

@@ -15,10 +15,8 @@
 int		ft_idxof(const char *s, char c)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
 	if (!s)
 		return (-1);
 	while (s[i] != '\0')

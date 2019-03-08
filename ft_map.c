@@ -51,13 +51,11 @@ char		*ft_map(int nb_t, char **tetri)
 {
 	int		x;
 	int		size;
-	int		i;
 	char	*map;
 	int		len;
 
 	size = nb_t * 4;
 	x = ft_sqrtmap(size);
-	i = 0;
 	if ((map = ft_map_size(x)) == NULL)
 		return (NULL);
 	len = ft_strlen(map);

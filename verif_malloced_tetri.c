@@ -50,11 +50,11 @@ static int		verif_tags(char *tetri)
 			if (tetri[i - 5] == '#')
 				j++;
 			i++;
-			ft_putnbr(j);
+//			ft_putnbr(j);
 		}
 	}
-	ft_putstr("\n");
-	ft_putnbr(j);
+//	ft_putstr("\n");
+//	ft_putnbr(j);
 	if (6 <= j && j <= 8)
 		return (1);
 	return (0);
@@ -64,12 +64,12 @@ int				verif_malloced_tetri(char *tetri)
 {
 	if (verif_endline(tetri) != 1)
 	{
-		ft_putstr("KOline");
+	//	ft_putstr("KOline");
 		return (0);
 	}
 	if (verif_tags(tetri) != 1)
 	{
-		ft_putstr("KOtags");
+	//	ft_putstr("KOtags");
 		return (0);
 	}
 	return (1);

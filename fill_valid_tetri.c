@@ -47,7 +47,7 @@ char			**fill_valid_tetri(char *str, int size)
 		k++;
 		if (verif_malloced_tetri(tetri[i]) != 1)
 			return (NULL);
-		printf("tetri[%i] =\n%s\n\n", i, tetri[i]);
+//		printf("tetri[%i] =\n%s\n\n", i, tetri[i]);
 		i++;
 		j = 0;
 	}
